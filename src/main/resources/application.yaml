@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: "dev"
+server:
+  port: 8001
+---
+spring:
+  profiles:
+    active: "test"
+server:
+  port: 8002
