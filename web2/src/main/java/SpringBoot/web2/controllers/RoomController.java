@@ -1,9 +1,11 @@
 package SpringBoot.web2.controllers;
 
 import SpringBoot.web2.models.Room;
+import jakarta.websocket.server.PathParam;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.LinkedList;
@@ -21,6 +23,12 @@ public class RoomController {
     }
     @GetMapping
     public String getAllRooms(Model model){
+        model.addAttribute("room", rooms);
+        return "room123";
+    }
+
+    @PostMapping
+    public String getaRoom(Model model){
         model.addAttribute("room", rooms);
         return "room123";
     }
